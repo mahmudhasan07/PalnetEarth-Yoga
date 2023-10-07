@@ -4,7 +4,7 @@ const TeacherInfo = () => {
     const data  = useLoaderData()
     const {id} = useParams()
     console.log(id);
-    const user = data.find(element => element.name == id)
+    const user = data.find(element => element.name.toLowerCase() == id)
     console.log(user);
     return (
         <>

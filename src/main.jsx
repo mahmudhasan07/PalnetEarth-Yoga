@@ -12,6 +12,9 @@ import Banner from './Components/Banner/Banner.jsx';
 import Teachers from './Components/Teachers/Teachers.jsx';
 import TeacherInfo from './Components/Teachers/TeacherInfo.jsx';
 import Category from './Components/Catagory/Category.jsx';
+import CategoriesInfo from './Components/Catagory/CategoriesInfo.jsx';
+import Login from './Components/User/Login.jsx';
+import Registration from './Components/User/Registration.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,9 +40,22 @@ const router = createBrowserRouter([
         path: '/category',
         element: <Category></Category>,
         loader : ()=> fetch('../public/TypesYoga.json')
+      },
+      {
+        path : "/category/:id",
+        element : <CategoriesInfo></CategoriesInfo>,
+        loader : ()=> fetch('../public/TypesYoga.json')
       }
     ]
   },
+  {
+    path : "/login",
+    element : <Login></Login>
+  },
+  {
+    path : "/registration",
+    element : <Registration></Registration>
+  }
 
 ])
 

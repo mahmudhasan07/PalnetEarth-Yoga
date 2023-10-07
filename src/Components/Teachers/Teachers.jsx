@@ -31,7 +31,7 @@ const Teacher = ({ card }) => {
             <div className='card border-2 border-gray-300 w-72'>
                 <img className='w-60 h-72 mx-auto' src={card.image_url} alt="" />
                 <p className='text-center text-xl my-2'><span className='font-bold'>Name: </span>{card.name}</p>
-                <NavLink to={`/teachers/${card.name}`} className={`btn bg-blue-600 text-white text-lg`}>Details</NavLink>
+                <NavLink to={`/teachers/${card.name}`.toLowerCase()} className={`btn bg-blue-600 text-white text-lg`}>Details</NavLink>
             </div>
         </>
     )
