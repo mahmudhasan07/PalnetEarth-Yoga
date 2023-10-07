@@ -8,6 +8,8 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import NavBar from "../NavBar/NavBar";
+import Benefits from "../Benefits/Benefits";
+import FeedBack from "../FeedBack/FeedBack";
 
 
 const Banner = () => {
@@ -57,7 +59,7 @@ const Banner = () => {
                                 data.map((element, idx) =>
                                     <SwiperSlide>
                                         <div onClick={() => handlediv(element)}>
-                                            <img className="w-48 h-60 rounded-xl" src={element.image_url} alt="" />
+                                            <img className="w-52 h-48 rounded-xl" src={element.image_url} alt="" />
                                             <p>{element.type}</p>
                                         </div>
                                     </SwiperSlide>
@@ -68,45 +70,14 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
+            <div className="lg:mx-10 mx-auto">
+                <Benefits></Benefits>
             </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
+            <div className="">
+               <FeedBack></FeedBack>
             </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
-            </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
-            </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
-            </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
-            </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
-            </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
-            </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
-            </div>
-            <div className="border-2 p-5">
-                <h1>hwll</h1>
-                <p>Mahnud</p>
+            <div className="">
+            
             </div>
         </>
     );

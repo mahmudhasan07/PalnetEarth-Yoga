@@ -15,6 +15,7 @@ import Category from './Components/Catagory/Category.jsx';
 import CategoriesInfo from './Components/Catagory/CategoriesInfo.jsx';
 import Login from './Components/User/Login.jsx';
 import Registration from './Components/User/Registration.jsx';
+import Benefits from './Components/Benefits/Benefits.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <Banner></Banner>,
         loader: () => fetch('../public/BannerYoga.json')
+      },
+      {
+        path : '/',
+        element : <Benefits></Benefits>
       },
       {
         path: '/teachers',
