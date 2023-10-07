@@ -1,0 +1,28 @@
+[
+    {
+        "type": "Prenatal Yoga",
+        "image_url": "https://i.ibb.co/3SBMxP4/Prenatal-Yoga.jpg",
+        "description": "Prenatal yoga is a type of yoga designed for pregnant women. Yoga is intended to create a balance between emotional, mental, physical, and spiritual dimensions."
+    },
+    {
+        "type": "AcroYoga",
+        "image_url": "https://i.ibb.co/sF2FLPC/AcroYoga.jpg",
+        "description": "Acroyoga is a physical practice that combines yoga and acrobatics. Acroyoga includes many types of partner and group acrobatics in which at least someone is lifted."
+    },
+    {
+        "type": "Viniyoga",
+        "image_url": "https://i.ibb.co/99JG7cQ/Viniyoga.jpg",
+        "description": "A personalized approach to yoga that adapts poses and practices to individual needs and conditions."
+
+    },
+    {
+        "type": "Hatha Yoga",
+        "image_url": "https://i.ibb.co/9Zgxt0L/Hatha-Yoga.jpg",
+        "description": "Hatha Yoga originates from Raja Yoga. It is the simpler version (without Yamas and Niyamas) of Raja Yoga."
+    },
+    {
+        "type": "Vinyasa Yoga",
+        "image_url": "https://i.ibb.co/T446sDG/Vinyasa-Yoga.jpg",
+        "description":"Vinyasa is a style of yoga characterized by stringing postures together so that you move from one to another, seamlessly, using breath."
+    }
+]
