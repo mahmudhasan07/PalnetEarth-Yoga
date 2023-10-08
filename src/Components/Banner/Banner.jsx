@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import NavBar from "../NavBar/NavBar";
 import Benefits from "../Benefits/Benefits";
 import FeedBack from "../FeedBack/FeedBack";
+import Service from "../Service/Service";
 
 
 const Banner = () => {
@@ -57,7 +58,7 @@ const Banner = () => {
                             {
 
                                 data.map((element, idx) =>
-                                    <SwiperSlide>
+                                    <SwiperSlide key={idx}>
                                         <div onClick={() => handlediv(element)}>
                                             <img className="w-52 h-48 rounded-xl" src={element.image_url} alt="" />
                                             <p>{element.type}</p>
@@ -74,10 +75,10 @@ const Banner = () => {
                 <Benefits></Benefits>
             </div>
             <div className="">
-               <FeedBack></FeedBack>
+                <Service></Service>
             </div>
             <div className="">
-            
+             <FeedBack></FeedBack>
             </div>
         </>
     );

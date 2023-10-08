@@ -1,0 +1,46 @@
+[
+    {
+        "id": "0",
+        "name": "All Videos"
+    },
+    {
+        "id": "1",
+        "name": "Hatha Yoga"
+    },
+    {
+        "id": "2",
+        "name": "Vinyasa Yoga"
+    },
+    {
+        "id": "3",
+        "name": "Ashtanga Yoga"
+    },
+    {
+        "id": "4",
+        "name": "Yin Yoga"
+    },
+    {
+        "id": "5",
+        "name": "Kundalini Yoga"
+    },
+    {
+        "id": "6",
+        "name": "Anusara Yoga"
+    },
+    {
+        "id": "7",
+        "name": "Prenatal Yoga"
+    },
+    {
+        "id": "8",
+        "name": "Jivamukti Yoga"
+    },
+    {
+        "id": "9",
+        "name": "Sivananda Yoga"
+    },
+    {
+        "id": "10",
+        "name": "AcroYoga"
+    }
+]

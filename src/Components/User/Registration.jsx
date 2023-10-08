@@ -1,9 +1,42 @@
+import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "./ConTextApi/ConTextApi";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Registration = () => {
+    const {createUser,logOut,updateInfo,user} = useContext(Context)
     const navigate = useNavigate()
-    const handlereg =()=>{
-        navigate("/login")
+
+    const name = useRef()
+    const number = useRef()
+    const email = useRef()
+    const password = useRef()
+
+    const handlereg =(e)=>{
+        e.preventDefault()
+        const Name = name.current.value
+        const Number = number.current.value
+        const Email = email.current.value
+        const Password = password.current.value
+
+        createUser(Email,Password)
+        .then(result =>{
+            console.log(result.user);
+            updateInfo(Name,Number)
+            .then(result=>{
+                console.log(result.user)
+                logOut()
+            })
+            .catch(error=>{
+                console.log(error.message);
+            })
+            navigate("/login")
+            toast.success('Registration Successfully done ')
+        })
+        .catch(error=>{
+            toast.warn(error.message)
+        })
     }
     return (
         <>
@@ -19,31 +52,32 @@ const Registration = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="name" className="input input-bordered w-96" required />
+                                <input ref={name} type="text" placeholder="name" className="input input-bordered w-96" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo URL</span>
+                                    <span className="label-text">Number</span>
                                 </label>
-                                <input type="text" placeholder="photo" className="input input-bordered w-96" required />
+                                <input ref={number} type="text" placeholder="number" className="input input-bordered w-96" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered w-96" required />
+                                <input ref={email} type="email" placeholder="email" className="input input-bordered w-96" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" className="input input-bordered w-96" required />
+                                <input ref={password} type="password" placeholder="password" className="input input-bordered w-96" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
                                 <button onClick={handlereg} className="btn btn-primary">Registration</button>
+                                <ToastContainer></ToastContainer>
                             </div>
                         </form>
                     </div>

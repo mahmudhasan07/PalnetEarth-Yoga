@@ -1,19 +1,28 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { Context } from "../User/ConTextApi/ConTextApi";
 
 const NavBar = () => {
+    const {user,logOut} = useContext(Context)
     const Links = 
     <>
     <NavLink to={`/`} className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "bg-blue-400 rounded-lg" : ""}><li className="text-base p-2">Home</li></NavLink>
-    <NavLink to={`/classes`} className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "bg-blue-400 rounded-lg" : ""}><li className="text-base p-2">Classes</li></NavLink>
+    isPending ? "pending" : isActive ? "bg-blue-500 rounded-lg" : ""}><li className="text-base p-2">Home</li></NavLink>
+    <NavLink to={`/classes/0`} className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-blue-500 rounded-lg" : ""}><li className="text-base p-2">Classes</li></NavLink>
     <NavLink to={`/teachers`} className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "bg-blue-400  rounded-lg" : ""}><li className="text-base p-2">Teachers</li></NavLink>
+    isPending ? "pending" : isActive ? "bg-blue-500  rounded-lg" : ""}><li className="text-base p-2">Teachers</li></NavLink>
     <NavLink to={`/category`} className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "bg-blue-400 rounded-lg" : ""}><li className="text-base p-2">Category </li></NavLink>
-    <NavLink to={`/contact-us`} className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "bg-blue-400 rounded-lg" : ""}><li className="text-base p-2">Contact Us</li></NavLink>
+    isPending ? "pending" : isActive ? "bg-blue-500 rounded-lg" : ""}><li className="text-base p-2">Category </li></NavLink>
+    <NavLink to={`/bookmark`} className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-blue-500 rounded-lg" : ""}><li className="text-base p-2">Save Videos </li></NavLink>
+    <NavLink to={`/contact`} className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-blue-500 rounded-lg" : ""}><li className="text-base p-2">Contact Us</li></NavLink>
     </>
+
+    const handleout=()=>{
+logOut()
+    }
     return (
         <>
             <div className="navbar bg-transparent  bg-opacity-50 absolute text-neutral-content text-white lg:px-10 bg-base-100">
@@ -38,7 +47,11 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <NavLink to={`/login`} className="btn">Login</NavLink>
+                    {
+                        user? <div className="flex"> <p className="border-2 my-auto p-2 bg-blue-500 font-bold mr-3 rounded-xl">{user.displayName}</p> <button className="btn" onClick={handleout}>LogOut</button> </div>
+                        :
+                        <NavLink to={`/login`} className="btn">Login</NavLink>
+                    }
                 </div>
             </div>
             

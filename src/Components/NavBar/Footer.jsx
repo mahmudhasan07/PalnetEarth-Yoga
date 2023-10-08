@@ -1,13 +1,22 @@
+import { NavLink } from "react-router-dom";
+
 const Footer = () => {
+    const Links = 
+    <>
+    <NavLink to={`/`} ><li className="">Home</li></NavLink>
+    <NavLink to={`/classes/0`}><li className=" ">Classes</li></NavLink>
+    <NavLink to={`/teachers`} ><li className=" ">Teachers</li></NavLink>
+    <NavLink to={`/category`} ><li className=" ">Category </li></NavLink>
+    <NavLink to={`/save-videos`} ><li className=" ">Save Videos </li></NavLink>
+    <NavLink to={`/contact-us`} ><li className=" ">Contact Us</li></NavLink>
+    </>
     return (
         <div>
             <footer className="footer p-10 bg-blue-500 text-white">
-                <nav>
-                    <header className="footer-title">Services</header>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                <nav className="list-none">
+{
+    Links
+}
                 </nav>
                 <nav>
                     <header className="footer-title">Company</header>

@@ -1,0 +1,51 @@
+[
+    {
+        "id": "1",
+        "name" : "1 Month Package",
+        "price" : "25$",
+        "image" : "https://i.ibb.co/Lvd2CKs/group-young-sporty-people-sitting-sukhasana-exercise.jpg",
+        "features" : ["Daily 1.5 hours access time","Free trail for 5 days","Cancel any time","Live event upto 5% off in ticket"] 
+    },
+    {
+        "id": "2",
+        "name" : "3 Month Package",
+        "price" : "72$",
+        "image" : "https://i.ibb.co/c8c3jpt/mother-with-little-daughter-trainer-practicing-yoga-gym.jpg",
+        "features" : ["Daily 2.5 hours access time","Free trail for 8 days","Cancel any time","10% Discount on our yoga wear","Live taking with trainer or teacher 2 days in monthly","Live event upto 10% off in ticket"] 
+    },
+    {
+        "id": "3",
+        "name" : "6 Month Package",
+        "price" : "140$",
+        "image" : "https://i.ibb.co/tHWHWdH/yoga-lovers-enjoying-practice-grass.jpg",
+        "features" : ["Daily 3.5 hours access time","Free trail for 12 days","Cancel any time","18% Discount on our yoga wear","Live taking with trainer or teacher 5 days in monthly","Live event upto 15% off in ticket"] 
+    },
+    {
+        "id": "4",
+        "name" : "9 Month Package",
+        "price" : "210$",
+        "image" : "https://i.ibb.co/GvN574h/trainer-helping-women-practicing-meditation-hall.jpg",
+        "features" : ["Daily unlimited access time","Free trail for 15 days","Cancel any time","25% Discount on our yoga wear","Live taking with trainer or teacher 10 days in monthly","Live event upto 20% off in ticket"] 
+    },
+    {
+        "id": "5",
+        "name" : "9 Month Premium Package",
+        "price" : "250$",
+        "image" : "https://i.ibb.co/HpYxVJ4/full-shot-women-doing-yoga-outdoors.jpg",
+        "features" : ["Daily unlimited access time","Free trail for 25 days","Cancel any time","35% Discount on our yoga wear","Live taking with trainer or teacher 15 days in monthly","Live event upto 30% off in ticket"] 
+    },
+    {
+        "id": "6",
+        "name" : "12 Month Package",
+        "price" : "270$",
+        "image" : "https://i.ibb.co/ZxyhNF1/silhouettes-sportive-women-dancing-near-sea-sunrise.jpg",
+        "features" : ["Daily unlimited access time","Free trail for 20 days","Cancel any time","30% Discount on our yoga wear","Live taking with trainer or teacher 15 days in monthly","Live event upto 28% off in ticket"] 
+    },
+    {
+        "id": "7",
+        "name" : "12 Month Premium Package",
+        "price" : "300$",
+        "image" : "https://i.ibb.co/PwPNG1K/back-view-women-meditating-outdoors.jpg",
+        "features" : ["Daily unlimited access time","Free trail for 30 days","Cancel any time","45% Discount on our yoga wear","Live taking with trainer or teacher 20 days in monthly","Live event upto 35% off in ticket"] 
+    }
+]

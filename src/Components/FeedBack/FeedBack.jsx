@@ -27,7 +27,7 @@ const FeedBack = () => {
                 pagination={{ clickable: true, currentClass : true }}
             >
                 {
-                    array.map((element, idx) => <SwiperSlide className="my-8">  <Review key={idx} card={element}></Review> </SwiperSlide>)
+                    array.map((element, idx) => <SwiperSlide key={idx} className="my-8">  <Review key={idx} card={element}></Review> </SwiperSlide>)
                 }
 
 
