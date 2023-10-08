@@ -22,12 +22,13 @@ const FeedBack = () => {
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 slidesPerView={2}
+                
                 //   centeredSlides={true}
                 navigation
                 pagination={{ clickable: true, currentClass : true }}
             >
                 {
-                    array.map((element, idx) => <SwiperSlide key={idx} className="my-8">  <Review key={idx} card={element}></Review> </SwiperSlide>)
+                    array.map((element, idx) => <SwiperSlide key={idx} className="my-8 ">  <Review key={idx} card={element}></Review> </SwiperSlide>)
                 }
 
 
@@ -39,7 +40,7 @@ const FeedBack = () => {
 const Review = ({ card }) => {
     return (
 
-        <div className="w-[650px] h-56 ml-14 border p-5 border-blue-500 rounded-xl">
+        <div className="lg:w-[650px] w-2/3 lg:h-56 h-fit ml-14 border lg:p-5 p-1 border-blue-500 rounded-xl">
             <p>{card.note}</p>
             <hr className="w-full my-3" />
             <h1 className="text-lg font-semibold">{card.name}</h1>

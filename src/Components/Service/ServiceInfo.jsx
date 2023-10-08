@@ -26,15 +26,15 @@ const ServiceInfo = () => {
 
                 </div>
             </div>
-            <div className="mx-10">
+            <div className="mx-10 lg:my-16 my-5">
                 <div className="flex  justify-around">
                     <img className="w-1/2" src={array?.image} alt="" />
                     <div className="my-auto">
                     <h1 className="text-3xl font-semibold">{array?.name}</h1>
-                    <button className="btn text-lg"><span className="text-xl font-semibold">Price: </span>{array?.price}</button>
+                    <button className="btn text-lg bg-blue-400 text-white "><span className="text-xl font-semibold">Price: </span>{array?.price}</button>
                     <div>
                     <h1 className="text-2xl font-semibold">Features :</h1>
-                    <ul className="list-disc my-5 ">
+                    <ul className="list-disc mx-auto my-5 ">
                         <li>{array?.features[0]}</li>
                         <li>{array?.features[1]}</li>
                         <li>{array?.features[2]}</li>

@@ -11,8 +11,8 @@ const Footer = () => {
     <NavLink to={`/contact-us`} ><li className=" ">Contact Us</li></NavLink>
     </>
     return (
-        <div>
-            <footer className="footer p-10 bg-blue-500 text-white">
+        <div className="">
+            <footer className="footer flex flex-wrap justify-around p-10 bg-blue-500 text-white">
                 <nav className="list-none">
 {
     Links

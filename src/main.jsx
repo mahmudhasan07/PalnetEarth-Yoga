@@ -24,11 +24,13 @@ import ConTextApi from './Components/User/ConTextApi/ConTextApi.jsx';
 import Contact from './Components/Contact/Contact.jsx';
 import BookMark from './Components/BookMark/BookMark.jsx';
 import PrivetRouter from './Components/Router/PrivetRouter.jsx';
+import ErrorPage from './Components/Error/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App></App>,
+    errorElement : <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

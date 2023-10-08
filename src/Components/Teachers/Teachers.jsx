@@ -12,10 +12,10 @@ const Teachers = () => {
 
                 </div>
             </div>
-            <div className='text-center lg:mt-20 mt-10'>
+            {/* <div className='text-center lg:mt-20 mt-10'>
                 <input type="text" placeholder='Enter teacher name' className='border-2 border-blue-500 w-80 p-2 rounded-lg' />
                 <button className='btn bg-blue-600 text-white'>Search</button>
-            </div>
+            </div> */}
             <div className='lg:mt-10 mt-5 flex flex-wrap justify-center gap-10'>
                 {
                     data.map((element, idx) => <Teacher key={idx} card={element}></Teacher>)

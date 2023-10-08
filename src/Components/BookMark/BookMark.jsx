@@ -27,7 +27,9 @@ const BookMark = () => {
             </div>
         <div className="flex flex-wrap justify-center gap-5 lg:my-16 my-8">
             {
-                data.map(element=> <Save key={element.unique} card={element}></Save> )
+                data.length >0 ? data.map(element=> <Save key={element.unique} card={element}></Save> )
+                : 
+                <p className="text-lg font-semibold">No Videos are saved</p>
             }
         </div>
         </section>

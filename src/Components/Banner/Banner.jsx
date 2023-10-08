@@ -34,22 +34,22 @@ const Banner = () => {
 
     return (
         <>
-            <div className="h-[600px]" style={{ backgroundImage: `url(${bgimg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: "center" }}>
+            <div className=" lg:h-[550px] h-fit" style={{ backgroundImage: `url(${bgimg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: "center" }}>
                 {/* <NavBar></NavBar> */}
-                <div className="text-neutral-content flex  justify-around text-center bg-opacity-50 bg-black hero-overlay">
-                    <div className="w-1/3 my-auto text-white">
+                <div className="text-neutral-content flex lg:flex-row  flex-col-reverse  justify-center mx-auto text-center bg-opacity-50 bg-black hero-overlay">
+                    <div className="lg:w-1/3 my-auto mx-auto text-white lg:p-0 pb-10">
                         <h1 className="text-4xl font-bold mb-5">{Info.type}</h1>
                         <p className="text-lg font-semibold mb-4">{Info.description}</p>
                         <NavLink className={`text-xl bg-blue-600 py-1 px-2 rounded-lg `}>More Detail</NavLink>
                     </div>
-                    <div className="w-1/3 my-auto">
+                    <div className="lg:w-1/3 w-2/3 my-auto mx-auto lg:p-0 pt-28">
                         <Swiper
                         modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}
                             spaceBetween={10}
-                            slidesPerView={3}
+                            slidesPerView={2}
                             centeredSlides={true}
                             navigation={true}
-                            autoplay={{delay: 2500,pauseOnMouseEnter: true}}
+                            autoplay={{delay: 2000,pauseOnMouseEnter: true}}
                             pagination={{ clickable: true }}
                             // scrollbar={{ draggable: true }}
                             // onSlideChange={() => console.log('slide change')}
@@ -58,7 +58,7 @@ const Banner = () => {
                             {
 
                                 data.map((element, idx) =>
-                                    <SwiperSlide key={idx}>
+                                    <SwiperSlide className="" key={idx}>
                                         <div onClick={() => handlediv(element)}>
                                             <img className="w-52 h-48 rounded-xl" src={element.image_url} alt="" />
                                             <p>{element.type}</p>
