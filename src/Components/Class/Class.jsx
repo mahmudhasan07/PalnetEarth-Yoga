@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLoaderData, useNavigate } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Class = () => {
 
@@ -9,6 +11,8 @@ const Class = () => {
         fetch('../../../public/Lists.json')
             .then(res => res.json())
             .then(value => setbtn(value))
+
+            AOS.init()
     }, [])
 
     const handlebtn = (id) => {

@@ -12,7 +12,7 @@ const FeedBack = () => {
     const [array, setarray] = useState([])
 
     useEffect(() => {
-        fetch('../../../public/FeedBack.json')
+        fetch('/FeedBack.json')
             .then(res => res.json())
             .then(data => setarray(data))
     }, [])

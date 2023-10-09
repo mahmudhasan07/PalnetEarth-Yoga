@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import {FcGoogle} from "react-icons/fc"
 
 const Login = () => {
-    const { user, signUser, googlelogin } = useContext(Context)
+    const { user, signUser, googlelogin, loading } = useContext(Context)
     const navigate = useNavigate()
     const email = useRef()
     const password = useRef()
@@ -22,6 +22,7 @@ const Login = () => {
         signUser(Email, Password)
             .then(result => {
                 console.log(result.user);
+                toast.success('Login Successfully done ')
                 if (location.state) {
                     navigate(`${location.state}`)
                 }
@@ -38,6 +39,14 @@ const Login = () => {
     }
     const handlegoogle = () => {
         googlelogin()
+        .then(result=>{
+console.log(result.user);
+            toast.success('Registration Successfully done ')
+            navigate('/')
+        })
+        .catch(error=>{
+            console.log(error.message);
+        })
     }
     return (
         <>

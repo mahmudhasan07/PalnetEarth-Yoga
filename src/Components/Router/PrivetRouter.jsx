@@ -5,9 +5,12 @@ import PropTypes from 'prop-types';
 
 const PrivetRouter = ({children}) => {
     const location = useLocation()
-    const {user}= useContext(Context)
+    const {user,loading}= useContext(Context)
     const navigate = useNavigate()
     console.log(location);
+    if(loading){
+        return <span className="loading loading-dots loading-lg"></span>
+    }
         if(user){
             return children;
         }

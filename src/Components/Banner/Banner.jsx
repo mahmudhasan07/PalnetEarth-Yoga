@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { NavLink, useLoaderData } from "react-router-dom";
@@ -11,6 +11,8 @@ import NavBar from "../NavBar/NavBar";
 import Benefits from "../Benefits/Benefits";
 import FeedBack from "../FeedBack/FeedBack";
 import Service from "../Service/Service";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Banner = () => {
@@ -20,6 +22,9 @@ const Banner = () => {
     // <>
 
     // </>
+    useEffect(()=>{
+        AOS.init()
+    },[])
 
     console.log(data);
     const user = data.find (element=> element.type == 'Prenatal Yoga')
@@ -30,19 +35,20 @@ const Banner = () => {
         setbgimg(element.image_url)
     }
     
-    console.log(Info);
+    console.log(user);
 
     return (
         <>
-            <div className=" lg:h-[550px] h-fit" style={{ backgroundImage: `url(${bgimg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: "center" }}>
+        <section >
+            <div  className=" lg:h-[550px] h-fit" style={{ backgroundImage: `url(${bgimg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: "center" }}>
                 {/* <NavBar></NavBar> */}
-                <div className="text-neutral-content flex lg:flex-row  flex-col-reverse  justify-center mx-auto text-center bg-opacity-50 bg-black hero-overlay">
-                    <div className="lg:w-1/3 my-auto mx-auto text-white lg:p-0 pb-10">
+                <div  className="text-neutral-content flex lg:flex-row  flex-col-reverse  justify-center mx-auto text-center bg-opacity-50 bg-black hero-overlay">
+                    <div data-aos="fade-right" className="lg:w-1/3 my-auto mx-auto text-white lg:p-0 pb-10">
                         <h1 className="text-4xl font-bold mb-5">{Info.type}</h1>
                         <p className="text-lg font-semibold mb-4">{Info.description}</p>
                         <NavLink className={`text-xl bg-blue-600 py-1 px-2 rounded-lg `}>More Detail</NavLink>
                     </div>
-                    <div className="lg:w-1/3 w-2/3 my-auto mx-auto lg:p-0 pt-28">
+                    <div data-aos="fade-left" className="lg:w-1/3 w-2/3 my-auto mx-auto lg:p-0 pt-28">
                         <Swiper
                         modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}
                             spaceBetween={10}
@@ -80,6 +86,7 @@ const Banner = () => {
             <div className="">
              <FeedBack></FeedBack>
             </div>
+            </section>
         </>
     );
 };

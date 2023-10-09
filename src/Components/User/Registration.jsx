@@ -1,49 +1,49 @@
 import { useContext, useRef } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "./ConTextApi/ConTextApi";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 // import swal from "sweetalert";
 
 const Registration = () => {
-    const {createUser,logOut,updateInfo,user} = useContext(Context)
+    const { createUser, logOut, updateInfo, user } = useContext(Context)
     const navigate = useNavigate()
     // const location = useLocation()
-// console.log("hi", location);
+    // console.log("hi", location);
     const name = useRef()
     const number = useRef()
     const email = useRef()
     const password = useRef()
 
-    const handlereg =(e)=>{
+    const handlereg = (e) => {
         e.preventDefault()
         const Name = name.current.value
         const Number = number.current.value
         const Email = email.current.value
         const Password = password.current.value
 
-        if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%^*?&])[A-Za-z\d@$!%^*?&]{6,}$/.test(Password)){
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%^*?&])[A-Za-z\d@$!%^*?&]{6,}$/.test(Password)) {
             toast.warn("Password must be 7 characters with upper&lower case and symbols")
             return
         }
-        createUser(Email,Password)
-            .then(result =>{
+        createUser(Email, Password)
+            .then(result => {
                 console.log(result.user);
-                updateInfo(Name,Number)
-                .then(result=>{
-                    console.log(result.user)
-                    logOut()
-                })
-                .catch(error=>{
-                    console.log(error.message);
-                })
+                toast.success('Registration Successfully done ')
                 navigate("/login")
-                // toast.success('Registration Successfully done ')
+                updateInfo(Name, Number)
+                    .then(result => {
+                        console.log(result.user)
+                        logOut()
+                    })
+                    .catch(error => {
+                        console.log(error.message);
+                    })
             })
-            .catch(error=>{
+            .catch(error => {
                 toast.warn(error.message)
             })
-        
+
     }
     return (
         <>
@@ -65,7 +65,7 @@ const Registration = () => {
                                 <label className="label">
                                     <span className="label-text">Number</span>
                                 </label>
-                                <input ref={number} type="text" placeholder="number" className="input input-bordered lg:w-96" required />
+                                <input ref={number} type="number" placeholder="number" className="input input-bordered lg:w-96" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -83,11 +83,23 @@ const Registration = () => {
                                 </label>
                             </div>
                             <div>
-                            <NavLink to='/login' className=" text-red-500 font-semibold flex justify-end ">Already User ?</NavLink>
+                                <NavLink to='/login' className=" text-red-500 font-semibold flex justify-end ">Already User ?</NavLink>
                             </div>
                             <div className="form-control mt-6">
                                 <button onClick={handlereg} className="btn btn-primary">Registration</button>
-                                <ToastContainer></ToastContainer>
+                                <ToastContainer
+                                    position="top-right"
+                                    autoClose={5000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover
+                                    theme="light"
+
+                                ></ToastContainer>
                             </div>
                         </form>
                     </div>

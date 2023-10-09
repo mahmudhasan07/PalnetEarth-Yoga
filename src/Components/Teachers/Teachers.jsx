@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
 import { NavLink, useLoaderData } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Teachers = () => {
     const data = useLoaderData()
+    useEffect(()=>{
+        AOS.init()
+    },[])
     return (
         <>
             <div className="h-[300px]" style={{ backgroundImage: `url(https://i.ibb.co/yVzNpPt/pxfuel-1.jpg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: "center" }}>
@@ -28,7 +33,7 @@ const Teachers = () => {
 const Teacher = ({ card }) => {
     return (
         <>
-            <div className='card border-2 border-gray-300 w-72'>
+            <div  data-aos="fade-up" data-aos-delay="100" className='card border-2 border-gray-300 w-72'>
                 <img className='w-60 h-72 mx-auto' src={card.image_url} alt="" />
                 <p className='text-center text-xl my-2'><span className='font-bold'>Name: </span>{card.name}</p>
                 <NavLink to={`/teachers/${card.name}`.toLowerCase()} className={`btn bg-blue-600 text-white text-lg`}>Details</NavLink>

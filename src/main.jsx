@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Banner></Banner>,
-        loader: () => fetch('../public/BannerYoga.json')
+        loader: () => fetch('/BannerYoga.json')
       },
       {
         path : '/',
@@ -45,37 +45,37 @@ const router = createBrowserRouter([
         path : '/',
         element : <Service></Service>,
 
-        // loader : ()=> fetch('../public/Service.json')
+        // loader : ()=> fetch('/Service.json')
       },
       {
         path : "/service/:id",
         element : <PrivetRouter><ServiceInfo></ServiceInfo></PrivetRouter>,
-        loader : ()=> fetch('../public/Service.json')
+        loader : ()=> fetch('/Service.json')
       },
       {
         path: '/teachers',
         element: <Teachers></Teachers>,
-        loader: () => fetch('../public/Teacher.json')
+        loader: () => fetch('/Teacher.json')
       },
       {
         path: '/teachers/:id',
         element: <PrivetRouter><TeacherInfo></TeacherInfo></PrivetRouter>,
-        loader: () => fetch('../public/Teacher.json')
+        loader: () => fetch('/Teacher.json')
       },
       {
         path: '/category',
         element: <Category></Category>,
-        loader : ()=> fetch('../public/TypesYoga.json')
+        loader : ()=> fetch('/TypesYoga.json')
       },
       {
         path : "/category/:id",
         element : <CategoriesInfo></CategoriesInfo>,
-        loader : ()=> fetch('../public/TypesYoga.json')
+        loader : ()=> fetch('/TypesYoga.json')
       },
       {
         path : "/bookmark",
         element : <BookMark></BookMark>,
-        loader : ()=> fetch('../public/Classitem.json')
+        loader : ()=> fetch('/Classitem.json')
       },
       {
         path : "/contact",
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
           {
             path : "/classes/:id",
             element : <ShowCard></ShowCard>,
-            loader : ()=> fetch("../public/Classitem.json")
+            loader : ()=> fetch("/Classitem.json")
           }
         ]
       }

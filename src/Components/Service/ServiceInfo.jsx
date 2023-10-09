@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import swal from 'sweetalert';
 
 
 const ServiceInfo = () => {
@@ -17,6 +18,10 @@ const ServiceInfo = () => {
     console.log(data);
     console.log(array);
 
+    const handleprice=()=>{
+        swal("Purchase", "Successfully you purchase ", "success");
+    }
+
     return (
         <>
         <section>
@@ -31,7 +36,7 @@ const ServiceInfo = () => {
                     <img className="w-1/2" src={array?.image} alt="" />
                     <div className="my-auto">
                     <h1 className="text-3xl font-semibold">{array?.name}</h1>
-                    <button className="btn text-lg bg-blue-400 text-white "><span className="text-xl font-semibold">Price: </span>{array?.price}</button>
+                    <button onClick={handleprice} className="btn text-lg bg-blue-400 text-white "><span className="text-xl font-semibold">Price: </span>{array?.price}</button>
                     <div>
                     <h1 className="text-2xl font-semibold">Features :</h1>
                     <ul className="list-disc mx-auto my-5 ">
