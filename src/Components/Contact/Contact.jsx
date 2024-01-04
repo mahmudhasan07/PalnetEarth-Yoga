@@ -7,7 +7,11 @@ const Contact = () => {
 
                 </div>
             </div>
-            <h1>hello</h1>
+            <div className="lg:my-16 my-8">
+            <h1 className="text-lg"><span className="text-2xl font-semibold">Address: </span> London city</h1>
+            <p className="text-lg"><span className="text-2xl font-semibold">Phone Number : </span>+09876543</p>
+            <p className="text-lg"><span className="text-2xl font-semibold">Email : XYZ@gamil.com</span></p>
+            </div>
         </section>
     );
 };

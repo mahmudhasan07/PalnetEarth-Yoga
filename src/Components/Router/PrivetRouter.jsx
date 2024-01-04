@@ -9,7 +9,7 @@ const PrivetRouter = ({children}) => {
     const navigate = useNavigate()
     console.log(location);
     if(loading){
-        return <span className="loading loading-dots loading-lg"></span>
+        return <span className="loading loading-dots flex  mx-auto w-1/5"></span>
     }
         if(user){
             return children;

@@ -7,6 +7,7 @@ export const Context = createContext()
 const ConTextApi = ({ children }) => {
 
 
+
     const [user, setUser] = useState()
     const [loading, setloading] = useState(true)
 
@@ -24,16 +25,17 @@ const ConTextApi = ({ children }) => {
         setloading(true)
         return signOut(auth)
     }
-    const updateInfo = (name,number) => {
+    const updateInfo = (name, number) => {
         setloading(true)
-        return updateProfile(auth.currentUser,{
+        return updateProfile(auth.currentUser, {
             displayName: name, phoneNumber: number.toString()
         })
     }
-    const googlelogin =()=>{
+    const googlelogin = () => {
         setloading(true)
-return signInWithPopup(auth,googleProvider)
+        return signInWithPopup(auth, googleProvider)
     }
+
 
     useEffect(() => {
         onAuthStateChanged(auth, (customer) => {
@@ -42,7 +44,7 @@ return signInWithPopup(auth,googleProvider)
         })
     }, [])
 
-    const data = {createUser,logOut,updateInfo,signUser,loading, googlelogin, user}
+    const data = { createUser, logOut, updateInfo, signUser, loading, googlelogin, user }
     return (
         <Context.Provider value={data}>
             {children}
